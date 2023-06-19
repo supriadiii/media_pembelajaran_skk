@@ -1,5 +1,5 @@
 import { Icon } from '@rneui/base';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -12,6 +12,25 @@ import {
 } from 'react-native';
 
 export default function Home(props: any) {
+  const [searchText, setSearchText] = useState('');
+  const [filteredMateri, setFilteredMateri] = useState<any>([]);
+
+  const handleSearch = (text: string) => {
+    setSearchText(text);
+
+    const filteredItems = text
+      ? MATERI.filter((item) => item.title.toLowerCase().includes(text.toLowerCase()))
+      : MATERI;
+
+    setFilteredMateri(filteredItems);
+  };
+
+  const handleMateriPress = (id: number) => {
+    // Navigasi ke halaman detail materi dengan mengirimkan ID materi sebagai parameter
+    if (id === 1) {
+      props.navigation.navigate('Pengertian');
+    }
+  };
   return (
     <ImageBackground
       source={require('../assets/images/home.png')}
@@ -21,7 +40,12 @@ export default function Home(props: any) {
         <Text style={styles.title2}>Media Pembelajaran Sistem Keamanan Komputer!</Text>
       </View>
       <View style={styles.viewSearch}>
-        <TextInput placeholder="Search..." style={styles.textInput}></TextInput>
+        <TextInput
+          placeholder="Search..."
+          style={styles.textInput}
+          value={searchText}
+          onChangeText={handleSearch}
+        />
         <Icon name="search" type="ionicon" color="#000000" />
       </View>
 
@@ -46,91 +70,66 @@ export default function Home(props: any) {
         </Text>
         <ScrollView>
           <View style={{ gap: 20 }}>
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Pengertian Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Pengertian Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Sejarah Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Sejarah Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Fungsi Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Fungsi Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Notasi Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Notasi Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Algoritma Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Algoritma Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
+            {filteredMateri.length > 0 ? (
+              filteredMateri.map((item: any) => (
+                <TouchableOpacity key={item.id} onPress={() => handleMateriPress(item.id)}>
+                  <View style={styles.viewMateri}>
+                    <View style={styles.viewImageTitle}>
+                      <View style={styles.viewImageMateri}></View>
+                      <View style={{ flex: 1 }}>
+                        <Text style={styles.textTitleMateri}>{item.title}</Text>
+                        <Text
+                          style={{
+                            fontFamily: 'Poppins_Regular',
+                            fontSize: 12,
+                          }}>
+                          {item.description}
+                        </Text>
+                      </View>
+                    </View>
+                    <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                  </View>
+                </TouchableOpacity>
+              ))
+            ) : (
+              <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                No matching results found.
+              </Text>
+            )}
           </View>
         </ScrollView>
       </View>
     </ImageBackground>
   );
 }
+
+const MATERI = [
+  {
+    id: 1,
+    title: 'Pengertian Kriptografi',
+    description: 'Pengertian Kriptografi',
+  },
+  {
+    id: 2,
+    title: 'Sejarah Kriptografi',
+    description: 'Sejarah Kriptografi',
+  },
+  {
+    id: 3,
+    title: 'Fungsi Kriptografi',
+    description: 'Fungsi Kriptografi',
+  },
+  {
+    id: 4,
+    title: 'Notasi Kriptografi',
+    description: 'Notasi Kriptografi',
+  },
+  {
+    id: 5,
+    title: 'Algoritma Kriptografi',
+    description: 'Algoritma Kriptografi',
+  },
+];
 
 const styles = StyleSheet.create({
   textTitleMateri: {
