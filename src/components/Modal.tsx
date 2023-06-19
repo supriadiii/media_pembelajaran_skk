@@ -2,7 +2,8 @@ import { Icon } from '@rneui/base';
 import React from 'react';
 import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 
-const ModalMateri = ({ modalMateriVisible, setModalMateri }: any) => {
+const ModalMateri = ({ props, modalMateriVisible, setModalMateri }: any) => {
+  // console.log('props', { props });
   return (
     <Modal
       animationType="slide"
@@ -15,14 +16,22 @@ const ModalMateri = ({ modalMateriVisible, setModalMateri }: any) => {
         <View style={styles.modalView}>
           <View style={styles.titleModal}>
             <Text style={styles.title}>Daftar Materi</Text>
-            <TouchableOpacity style={{ padding: 2 }}>
+            <TouchableOpacity
+              style={{ padding: 2 }}
+              onPress={() => {
+                setModalMateri(false);
+              }}>
               <Icon name="close" type="ionicon" color="#000000" size={24} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity
+            style={styles.viewMateri}
+            onPress={() => props.navigation.navigate('Pengertian')}>
             <Text style={styles.textMateri}>Pengertian Kriptografi</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity
+            style={styles.viewMateri}
+            onPress={() => props.navigation.navigate('Fungsi')}>
             <Text style={styles.textMateri}>Sejarah Kriptografi</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.viewMateri}>

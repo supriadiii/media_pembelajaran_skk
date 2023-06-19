@@ -12,6 +12,7 @@ import Sejarah from './src/Sejarah';
 import Fungsi from './src/Fungsi';
 import Notasi from './src/Notasi';
 import Algoritma from './src/Algoritma';
+import ModalMateri from './src/components/Modal';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +62,7 @@ export default function App() {
           <Stack.Screen name="Fungsi" component={Fungsi} />
           <Stack.Screen name="Notasi" component={Notasi} />
           <Stack.Screen name="Algoritma" component={Algoritma} />
+          <Stack.Screen name="ModalMateri" component={ModalMateri} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
