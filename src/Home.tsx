@@ -13,122 +13,124 @@ import {
 
 export default function Home(props: any) {
   return (
-    <ImageBackground
-      source={require('../assets/images/home.png')}
-      style={styles.imageBackgroundView}>
-      <View style={{ paddingTop: 40 }}>
-        <Text style={styles.title1}>Selamat Datang di</Text>
-        <Text style={styles.title2}>Media Pembelajaran Sistem Keamanan Komputer!</Text>
-      </View>
-      <View style={styles.viewSearch}>
-        <TextInput placeholder="Search..." style={styles.textInput}></TextInput>
-        <Icon name="search" type="ionicon" color="#000000" />
-      </View>
-
-      <View style={styles.viewPelajari}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.textPelajariSemua}>Pelajari Semua Materi</Text>
-          <View style={styles.viewMulai}>
-            <Text style={styles.textMulai}>Mulai</Text>
-            <Icon name="arrow-forward-circle" type="ionicon" color="#FFFFFF" />
-          </View>
+    <>
+      <ImageBackground
+        source={require('../assets/images/home.png')}
+        style={styles.imageBackgroundView}>
+        <View style={{ paddingTop: 40 }}>
+          <Text style={styles.title1}>Selamat Datang di</Text>
+          <Text style={styles.title2}>Media Pembelajaran Sistem Keamanan Komputer!</Text>
         </View>
-        <View style={styles.viewImagePelajari}>
-          <Image
-            source={require('../assets/images/Pelajari.png')}
-            style={{ width: '100%', height: '100%' }}
-          />
+        <View style={styles.viewSearch}>
+          <TextInput placeholder="Search..." style={styles.textInput}></TextInput>
+          <Icon name="search" type="ionicon" color="#000000" />
         </View>
-      </View>
-      <View style={{ flex: 1, paddingTop: 40 }}>
-        <Text style={{ fontFamily: 'Poppins_Bold', color: '#000000', fontSize: 16 }}>
-          Materi Pembelajaran
-        </Text>
-        <ScrollView>
-          <View style={{ gap: 20 }}>
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Pengertian Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Pengertian Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
 
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Sejarah Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Sejarah Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Fungsi Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Fungsi Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Notasi Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Notasi Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
-            </View>
-
-            {/* ======================== */}
-            <View style={styles.viewMateri}>
-              <View style={styles.viewImageTitle}>
-                <View style={styles.viewImageMateri}></View>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.textTitleMateri}>Algoritma Kriptografi</Text>
-                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
-                    Algoritma Kriptografi
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
-              </TouchableOpacity>
+        <View style={styles.viewPelajari}>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.textPelajariSemua}>Pelajari Semua Materi</Text>
+            <View style={styles.viewMulai}>
+              <Text style={styles.textMulai}>Mulai</Text>
+              <Icon name="arrow-forward-circle" type="ionicon" color="#FFFFFF" />
             </View>
           </View>
-        </ScrollView>
-      </View>
-    </ImageBackground>
+          <View style={styles.viewImagePelajari}>
+            <Image
+              source={require('../assets/images/Pelajari.png')}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </View>
+        </View>
+        <View style={{ flex: 1, paddingTop: 40 }}>
+          <Text style={{ fontFamily: 'Poppins_Bold', color: '#000000', fontSize: 16 }}>
+            Materi Pembelajaran
+          </Text>
+          <ScrollView>
+            <View style={{ gap: 20 }}>
+              {/* ======================== */}
+              <View style={styles.viewMateri}>
+                <View style={styles.viewImageTitle}>
+                  <View style={styles.viewImageMateri}></View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.textTitleMateri}>Pengertian Kriptografi</Text>
+                    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                      Pengertian Kriptografi
+                    </Text>
+                  </View>
+                </View>
+                <TouchableOpacity>
+                  <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                </TouchableOpacity>
+              </View>
+
+              {/* ======================== */}
+              <View style={styles.viewMateri}>
+                <View style={styles.viewImageTitle}>
+                  <View style={styles.viewImageMateri}></View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.textTitleMateri}>Sejarah Kriptografi</Text>
+                    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                      Sejarah Kriptografi
+                    </Text>
+                  </View>
+                </View>
+                <TouchableOpacity>
+                  <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                </TouchableOpacity>
+              </View>
+
+              {/* ======================== */}
+              <View style={styles.viewMateri}>
+                <View style={styles.viewImageTitle}>
+                  <View style={styles.viewImageMateri}></View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.textTitleMateri}>Fungsi Kriptografi</Text>
+                    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                      Fungsi Kriptografi
+                    </Text>
+                  </View>
+                </View>
+                <TouchableOpacity>
+                  <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                </TouchableOpacity>
+              </View>
+
+              {/* ======================== */}
+              <View style={styles.viewMateri}>
+                <View style={styles.viewImageTitle}>
+                  <View style={styles.viewImageMateri}></View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.textTitleMateri}>Notasi Kriptografi</Text>
+                    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                      Notasi Kriptografi
+                    </Text>
+                  </View>
+                </View>
+                <TouchableOpacity>
+                  <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                </TouchableOpacity>
+              </View>
+
+              {/* ======================== */}
+              <View style={styles.viewMateri}>
+                <View style={styles.viewImageTitle}>
+                  <View style={styles.viewImageMateri}></View>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.textTitleMateri}>Algoritma Kriptografi</Text>
+                    <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                      Algoritma Kriptografi
+                    </Text>
+                  </View>
+                </View>
+                <TouchableOpacity>
+                  <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+                </TouchableOpacity>
+              </View>
+            </View>
+          </ScrollView>
+        </View>
+      </ImageBackground>
+    </>
   );
 }
 
