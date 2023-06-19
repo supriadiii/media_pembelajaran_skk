@@ -29,6 +29,14 @@ export default function Home(props: any) {
     // Navigasi ke halaman detail materi dengan mengirimkan ID materi sebagai parameter
     if (id === 1) {
       props.navigation.navigate('Pengertian');
+    } else if (id === 2) {
+      props.navigation.navigate('Sejarah');
+    } else if (id === 3) {
+      props.navigation.navigate('Fungsi');
+    } else if (id === 4) {
+      props.navigation.navigate('Notasi');
+    } else if (id === 5) {
+      props.navigation.navigate('Algoritma');
     }
   };
   return (
@@ -115,22 +123,26 @@ const MATERI = [
   {
     id: 2,
     title: 'Sejarah Kriptografi',
-    description: 'Sejarah Kriptografi',
+    description:
+      'Sejarah kriptografi adalah studi tentang penggunaan teknik-teknik enkripsi untuk menjaga kerahasiaan komunikasi. Kriptografi telah ada sejak zaman kuno, di mana pesan rahasia dikirim menggunakan metode sederhana seperti penggantian huruf atau penggeseran karakter. Selama berabad-abad, kriptografi berkembang dengan penemuan teknik-teknik yang lebih kuat, seperti substitusi polialfabetik dan mesin enkripsi seperti mesin Enigma yang digunakan selama Perang Dunia II.',
   },
   {
     id: 3,
     title: 'Fungsi Kriptografi',
-    description: 'Fungsi Kriptografi',
+    description:
+      'Fungsi kriptografi adalah untuk melindungi kerahasiaan, integritas, dan otentikasi data serta komunikasi melalui penggunaan teknik enkripsi yang aman.',
   },
   {
     id: 4,
     title: 'Notasi Kriptografi',
-    description: 'Notasi Kriptografi',
+    description:
+      'Notasi kriptografi adalah sistem atau metode yang digunakan untuk merepresentasikan atau menyimbolkan data atau informasi secara kriptografis dalam bentuk simbol, angka, atau karakter khusus.',
   },
   {
     id: 5,
     title: 'Algoritma Kriptografi',
-    description: 'Algoritma Kriptografi',
+    description:
+      'Algoritma kriptografi adalah serangkaian langkah atau prosedur matematis yang digunakan untuk melakukan enkripsi (proses mengubah data menjadi bentuk yang tidak terbaca) dan dekripsi (proses mengembalikan data yang telah dienkripsi menjadi bentuk semula) dalam kriptografi.',
   },
 ];
 

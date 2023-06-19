@@ -8,6 +8,10 @@ import { StyleSheet, Text } from 'react-native';
 
 import Home from './src/Home';
 import Pengertian from './src/Pengertian';
+import Sejarah from './src/Sejarah';
+import Fungsi from './src/Fungsi';
+import Notasi from './src/Notasi';
+import Algoritma from './src/Algoritma';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,6 +57,10 @@ export default function App() {
         <Stack.Navigator initialRouteName="TabNavigator" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Pengertian" component={Pengertian} />
+          <Stack.Screen name="Sejarah" component={Sejarah} />
+          <Stack.Screen name="Fungsi" component={Fungsi} />
+          <Stack.Screen name="Notasi" component={Notasi} />
+          <Stack.Screen name="Algoritma" component={Algoritma} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
