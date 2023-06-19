@@ -13,7 +13,7 @@ import {
 
 export default function Home(props: any) {
   const [searchText, setSearchText] = useState('');
-  const [filteredMateri, setFilteredMateri] = useState<any>([]);
+  const [filteredMateri, setFilteredMateri] = useState<any>(MATERI);
 
   const handleSearch = (text: string) => {
     setSearchText(text);
@@ -82,7 +82,9 @@ export default function Home(props: any) {
                           style={{
                             fontFamily: 'Poppins_Regular',
                             fontSize: 12,
-                          }}>
+                          }}
+                          numberOfLines={2}
+                          ellipsizeMode="tail">
                           {item.description}
                         </Text>
                       </View>
@@ -107,7 +109,8 @@ const MATERI = [
   {
     id: 1,
     title: 'Pengertian Kriptografi',
-    description: 'Pengertian Kriptografi',
+    description:
+      'Kriptografi adalah ilmu dan seni mengamankan komunikasi dan data melalui teknik enkripsi untuk menjaga kerahasiaan, integritas, otentikasi, dan mencegah penyangkalan.',
   },
   {
     id: 2,
