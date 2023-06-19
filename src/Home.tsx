@@ -1,136 +1,221 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Icon } from '@rneui/base';
 import React from 'react';
-import { Icon } from '@rneui/themed';
-import { TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  ImageBackground,
+  TouchableOpacity,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 
 export default function Home(props: any) {
   return (
-    <View style={styles.Container}>
-      <View
-        style={{
-          backgroundColor: 'rgba(0, 148, 238, 1)',
-          paddingTop: 50,
-          borderBottomRightRadius: 30,
-          borderBottomLeftRadius: 30,
-          paddingHorizontal: 20,
-          gap: 30,
-          paddingBottom: 30,
-        }}>
-        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-          {/* <Icon name="arrow-left" type="material-community" size={25} color={'white'} /> */}
-          <Text style={{ color: 'white', fontWeight: 'bold' }}>My app</Text>
+    <ImageBackground
+      source={require('../assets/images/home.png')}
+      style={styles.imageBackgroundView}>
+      <View style={{ paddingTop: 40 }}>
+        <Text style={styles.title1}>Selamat Datang di</Text>
+        <Text style={styles.title2}>Media Pembelajaran Sistem Keamanan Komputer!</Text>
+      </View>
+      <View style={styles.viewSearch}>
+        <TextInput placeholder="Search..." style={styles.textInput}></TextInput>
+        <Icon name="search" type="ionicon" color="#000000" />
+      </View>
+
+      <View style={styles.viewPelajari}>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.textPelajariSemua}>Pelajari Semua Materi</Text>
+          <View style={styles.viewMulai}>
+            <Text style={styles.textMulai}>Mulai</Text>
+            <Icon name="arrow-forward-circle" type="ionicon" color="#FFFFFF" />
+          </View>
         </View>
-        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-          {/* <Icon name="arrow-left" type="material-community" size={25} color={'white'} /> */}
-          <Text style={{ color: 'white', fontWeight: 'bold', textAlign: 'center', fontSize: 16 }}>
-            Media Pembelajaran{'\n'}Sistem Keamana Komputer
-          </Text>
+        <View style={styles.viewImagePelajari}>
+          <Image
+            source={require('../assets/images/Pelajari.png')}
+            style={{ width: '100%', height: '100%' }}
+          />
         </View>
       </View>
-      <View style={styles.shadowContainer}>
-        <View>
-          <Text style={{ color: '#818181', fontWeight: '700' }}>Matei Pembelajaran </Text>
-        </View>
-        <View style={styles.motherContainerItem}>
-          <TouchableOpacity onPress={() => props.navigation.navigate('Pengertian')}>
-            <View style={styles.containerMateri}>
-              <Image
-                style={styles.IconMateri}
-                source={require('../assets/1x/iconKriptografy.png')}
-              />
-              <Text style={styles.textItemStyle}>Pengertian{'\n'}Kriptografy</Text>
+      <View style={{ flex: 1, paddingTop: 40 }}>
+        <Text style={{ fontFamily: 'Poppins_Bold', color: '#000000', fontSize: 16 }}>
+          Materi Pembelajaran
+        </Text>
+        <ScrollView>
+          <View style={{ gap: 20 }}>
+            {/* ======================== */}
+            <View style={styles.viewMateri}>
+              <View style={styles.viewImageTitle}>
+                <View style={styles.viewImageMateri}></View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.textTitleMateri}>Pengertian Kriptografi</Text>
+                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                    Pengertian Kriptografi
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity>
+                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.containerMateri}>
-              <Image
-                style={styles.IconMateri}
-                source={require('../assets/1x/iconSejarahKriptografy.png')}
-              />
-              <Text style={styles.textItemStyle}>Sejarah{'\n'}Kriptografy</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
 
-        <View style={styles.motherContainerItem}>
-          <TouchableOpacity>
-            <View style={styles.containerMateri}>
-              <Image
-                style={styles.IconMateri}
-                source={require('../assets/1x/iconFungsiKriptografy.png')}
-              />
-              <Text style={styles.textItemStyle}>Fungsi{'\n'}Kriptografy</Text>
+            {/* ======================== */}
+            <View style={styles.viewMateri}>
+              <View style={styles.viewImageTitle}>
+                <View style={styles.viewImageMateri}></View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.textTitleMateri}>Sejarah Kriptografi</Text>
+                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                    Sejarah Kriptografi
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity>
+                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.containerMateri}>
-              <Image style={styles.IconMateri} source={require('../assets/1x/iconNotasi.png')} />
-              <Text style={styles.textItemStyle}> Notasi{'\n'}Kriptografy</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
 
-        <View style={styles.motherContainerItem2}>
-          <TouchableOpacity>
-            <View style={styles.containerMateri}>
-              <Image style={styles.IconMateri} source={require('../assets/1x/iconAlgoritma.png')} />
-              <Text style={styles.textItemStyle}>Algoritma Kriptografy</Text>
+            {/* ======================== */}
+            <View style={styles.viewMateri}>
+              <View style={styles.viewImageTitle}>
+                <View style={styles.viewImageMateri}></View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.textTitleMateri}>Fungsi Kriptografi</Text>
+                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                    Fungsi Kriptografi
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity>
+                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
-        </View>
+
+            {/* ======================== */}
+            <View style={styles.viewMateri}>
+              <View style={styles.viewImageTitle}>
+                <View style={styles.viewImageMateri}></View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.textTitleMateri}>Notasi Kriptografi</Text>
+                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                    Notasi Kriptografi
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity>
+                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+              </TouchableOpacity>
+            </View>
+
+            {/* ======================== */}
+            <View style={styles.viewMateri}>
+              <View style={styles.viewImageTitle}>
+                <View style={styles.viewImageMateri}></View>
+                <View style={{ flex: 1 }}>
+                  <Text style={styles.textTitleMateri}>Algoritma Kriptografi</Text>
+                  <Text style={{ fontFamily: 'Poppins_Regular', fontSize: 12 }}>
+                    Algoritma Kriptografi
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity>
+                <Icon name="chevron-right" type="feather" color="#FFFFFF" size={32} />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </ScrollView>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  motherContainerItem: {
+  textTitleMateri: {
+    color: '#000000',
+    fontFamily: 'Poppins_Bold',
+    fontSize: 16,
+  },
+  viewImageMateri: {
+    height: 60,
+    width: 60,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+  },
+  viewImageTitle: {
+    flexDirection: 'row',
+    gap: 8,
+    flex: 1,
+  },
+  viewMateri: {
+    padding: 20,
+    backgroundColor: '#37C9EE',
+    borderRadius: 20,
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    flex: 1,
+  },
+  viewImagePelajari: {
+    height: 100,
+    width: 100,
+    flex: 1,
+  },
+  textMulai: {
+    color: '#FFFFFF',
+    fontFamily: 'Poppins_SemiBold',
+    fontSize: 12,
+  },
+  viewPelajari: {
+    backgroundColor: '#FCFCFC',
+    borderRadius: 25,
+    padding: 20,
     flexDirection: 'row',
   },
-  motherContainerItem2: {
-    justifyContent: 'center',
+  textPelajariSemua: {
+    fontFamily: 'Poppins_Bold',
+    fontSize: 16,
+  },
+  viewMulai: {
+    backgroundColor: '#37C9EE',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 10,
   },
-  IconMateri: {
-    height: 42,
-    aspectRatio: 1,
-  },
-  containerMateri: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 10,
-    backgroundColor: '#F0F0F0',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    borderRadius: 20,
-    width: 140,
-  },
-  textItemStyle: {
-    color: '#818181',
-    textAlign: 'center',
-  },
-  Container: {
+  textInput: {
     flex: 1,
-    backgroundColor: '#FBFBFB',
-    gap: 30,
+    fontFamily: 'Poppins_Regular',
+    color: '#000000',
   },
-  shadowContainer: {
-    backgroundColor: 'white',
+  viewSearch: {
+    backgroundColor: '#FCFCFC',
+    paddingVertical: 8,
+    paddingHorizontal: 24,
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 16,
+  },
+  title2: {
+    fontFamily: 'Poppins_Bold',
+    color: '#FFFFFF',
+    fontSize: 20,
+  },
+  title1: {
+    fontFamily: 'Poppins_Bold',
+    color: '#FFFFFF',
+    fontSize: 16,
+  },
+  imageBackgroundView: {
+    flex: 1,
     paddingHorizontal: 20,
-    marginHorizontal: 20,
-    borderRadius: 20,
-    paddingVertical: 30,
-    gap: 30,
-    zIndex: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    paddingTop: 40,
+    gap: 20,
   },
 });
