@@ -2,7 +2,27 @@ import { Icon } from '@rneui/base';
 import React from 'react';
 import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 
-const ModalMateri = ({ modalMateriVisible, setModalMateri }: any) => {
+const ModalMateri = ({ props, modalMateriVisible, setModalMateri }: any) => {
+  const handlerPengertian = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Pengertian');
+  };
+  const handlerSejarah = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Sejarah');
+  };
+  const handlerFungsi = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Fungsi');
+  };
+  const handlerNotasi = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Notasi');
+  };
+  const handlerAlgoritma = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Algoritma');
+  };
   return (
     <Modal
       animationType="slide"
@@ -15,23 +35,27 @@ const ModalMateri = ({ modalMateriVisible, setModalMateri }: any) => {
         <View style={styles.modalView}>
           <View style={styles.titleModal}>
             <Text style={styles.title}>Daftar Materi</Text>
-            <TouchableOpacity style={{ padding: 2 }}>
+            <TouchableOpacity
+              style={{ padding: 2 }}
+              onPress={() => {
+                setModalMateri(false);
+              }}>
               <Icon name="close" type="ionicon" color="#000000" size={24} />
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerPengertian}>
             <Text style={styles.textMateri}>Pengertian Kriptografi</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerSejarah}>
             <Text style={styles.textMateri}>Sejarah Kriptografi</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerFungsi}>
             <Text style={styles.textMateri}>Fungsi Kriptografi</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerNotasi}>
             <Text style={styles.textMateri}>Notasi Kriptografi</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.viewMateri}>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerAlgoritma}>
             <Text style={styles.textMateri}>Algoritma Kriptografi</Text>
           </TouchableOpacity>
         </View>

@@ -1,17 +1,16 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import AppLoading from 'expo';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text } from 'react-native';
+import { Text } from 'react-native';
 
+import Algoritma from './src/Algoritma';
+import Fungsi from './src/Fungsi';
 import Home from './src/Home';
+import Notasi from './src/Notasi';
 import Pengertian from './src/Pengertian';
 import Sejarah from './src/Sejarah';
-import Fungsi from './src/Fungsi';
-import Notasi from './src/Notasi';
-import Algoritma from './src/Algoritma';
 
 const Stack = createNativeStackNavigator();
 
@@ -66,12 +65,3 @@ export default function App() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
