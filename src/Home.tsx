@@ -37,6 +37,8 @@ export default function Home(props: any) {
       props.navigation.navigate('Notasi');
     } else if (id === 5) {
       props.navigation.navigate('Algoritma');
+    } else if (id === 6) {
+      props.navigation.navigate('Soal');
     }
   };
   return (
@@ -149,6 +151,13 @@ const MATERI = [
   {
     id: 5,
     title: 'Algoritma Kriptografi',
+    description:
+      'Algoritma kriptografi adalah serangkaian langkah atau prosedur matematis yang digunakan untuk melakukan enkripsi (proses mengubah data menjadi bentuk yang tidak terbaca) dan dekripsi (proses mengembalikan data yang telah dienkripsi menjadi bentuk semula) dalam kriptografi.',
+    image: require('../assets/images/materiAlgoritma.png'),
+  },
+  {
+    id: 6,
+    title: 'Contoh Soal',
     description:
       'Algoritma kriptografi adalah serangkaian langkah atau prosedur matematis yang digunakan untuk melakukan enkripsi (proses mengubah data menjadi bentuk yang tidak terbaca) dan dekripsi (proses mengembalikan data yang telah dienkripsi menjadi bentuk semula) dalam kriptografi.',
     image: require('../assets/images/materiAlgoritma.png'),

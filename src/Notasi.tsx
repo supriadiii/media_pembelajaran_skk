@@ -314,4 +314,9 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: 'contain',
   },
+  image2: {
+    width: 250,
+    height: 200,
+    resizeMode: 'contain',
+  },
 });

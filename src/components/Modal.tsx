@@ -23,6 +23,10 @@ const ModalMateri = ({ props, modalMateriVisible, setModalMateri }: any) => {
     setModalMateri(false);
     props.navigation.navigate('Algoritma');
   };
+  const handlerSoal = () => {
+    setModalMateri(false);
+    props.navigation.navigate('Soal');
+  };
   return (
     <Modal
       animationType="slide"
@@ -57,6 +61,9 @@ const ModalMateri = ({ props, modalMateriVisible, setModalMateri }: any) => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.viewMateri} onPress={handlerAlgoritma}>
             <Text style={styles.textMateri}>Algoritma Kriptografi</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.viewMateri} onPress={handlerSoal}>
+            <Text style={styles.textMateri}>Contoh Soal</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -1,3 +1,5 @@
+import { Icon } from '@rneui/base';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -9,8 +11,7 @@ import {
   Image,
   FlatList,
 } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
-import { Icon } from '@rneui/base';
+
 import ModalMateri from './components/Modal';
 
 const Algoritma = (props: any) => {
@@ -34,7 +35,7 @@ const Algoritma = (props: any) => {
             <Icon name="chevron-left" type="feather" color="#FFFFFF" size={24} />
           </TouchableOpacity>
           <Animated.View style={{ opacity: fadeAnim }}>
-            <Text style={styles.title}>Kriptografi Simetri</Text>
+            <Text style={styles.title}>Algoritma Kriptografi</Text>
           </Animated.View>
           <TouchableOpacity style={{ padding: 2 }} onPress={() => setModalMateri(true)}>
             <Icon name="menu" type="feather" color="#FFFFFF" size={24} />
@@ -61,7 +62,7 @@ const Algoritma = (props: any) => {
                 menjadi cipherteks (C), sedangkan proses dekripsi dilakukan dengan menggunakan kunci
                 dekripsi (DK) untuk mengembalikan cipherteks (C) menjadi plainteks (P) asli.
               </Text>
-              <Text style={styles.boldText}>Notasi matematis</Text>
+              <Text style={styles.boldText}>Notasi Matematis</Text>
               <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
                 <Image source={require('../assets/images/simetris2.png')} style={styles.image1} />
               </View>
@@ -88,28 +89,20 @@ const Algoritma = (props: any) => {
                   harus dijaga kerahasiaannya agar hanya dapat diakses oleh pihak yang berwenang.
                 </Text>
               </Text>
-              <Text style={styles.boldText}>Contoh algoritma simetri :</Text>
-              <FlatList
-                data={[
-                  { key: 'Tokyo' },
-                  { key: 'Delhi' },
-                  { key: 'Shanghai' },
-                  { key: 'Sao Paolo' },
-                  { key: 'Mexico City' },
-                  { key: 'Cairo' },
-                  { key: 'Dhaka' },
-                  { key: 'Mumbai' },
-                  { key: 'Beijing' },
-                  { key: 'Osaka' },
-                ]}
-                renderItem={({ item }) => {
-                  return (
-                    <View style={{ marginBottom: 10 }}>
-                      <Text style={styles.textMateri}>{item.key}</Text>
-                    </View>
-                  );
-                }}
-              />
+              <Text style={styles.boldText}>Contoh Algoritma Simetri :</Text>
+              <View>
+                <Text style={styles.textMateri}>Tokyo</Text>
+                <Text style={styles.textMateri}>Delhi</Text>
+                <Text style={styles.textMateri}>Shanghai</Text>
+                <Text style={styles.textMateri}>Sao Paolo</Text>
+                <Text style={styles.textMateri}>Mexico City</Text>
+                <Text style={styles.textMateri}>Cairo</Text>
+                <Text style={styles.textMateri}>Dhaka</Text>
+                <Text style={styles.textMateri}>Mumbai</Text>
+                <Text style={styles.textMateri}>Beijing</Text>
+                <Text style={styles.textMateri}>Osaka</Text>
+              </View>
+
               <Text style={styles.textMateri}>
                 4. Nirpenyangkalan (non-repudiation): Fungsi nirpenyangkalan digunakan untuk
                 mencegah entitas yang berkomunikasi menyangkal tindakan atau pengiriman pesan yang
@@ -171,8 +164,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   boldText: {
-    fontFamily: 'Poppins_Bold',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_SemiBold',
     fontSize: 16,
   },
   image1: {
