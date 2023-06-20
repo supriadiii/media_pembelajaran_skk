@@ -138,57 +138,38 @@ const Soal = (props: any) => {
                 Substitusi secara spiral adalah sebuah metode substitusi dalam kriptografi yang
                 menggunakan pola spiral untuk menggantikan huruf-huruf dalam plainteks. Pada metode
                 ini, sebuah kata kunci digunakan untuk membentuk pola spiral yang akan menentukan
-                urutan penggantian huruf.
-                <Text style={styles.boldText}>Plainteks:</Text> culik anak itu jam 11 siang {'\n'}
-                <Text style={styles.boldText}>Cipherteks:</Text> t^$gfUi89rewoFpfdWqL:p[uTcxZ{'\n'}
-                kamu dapat mencoba penerapanan plainteks di bawah ini :
+                urutan penggantian huruf.{'\n'}
+                Untuk plaintext :{'\n'}
               </Text>
-              <View style={{ borderWidth: 1, padding: 10, borderRadius: 10 }}>
-                <Text style={styles.textMateri}>Plaintext:</Text>
-                <TextInput
-                  style={{ textAlign: 'center', fontFamily: 'Poppins_Regular' }}
-                  value={plaintext}
-                  onChangeText={(text) => setPlaintext(text)}
-                  placeholder="Masukkan teks"
-                />
-                <Button title="Enkripsi" onPress={encryptText} />
-                <Text style={styles.textMateri}>Hasil Ciphertext:</Text>
-                <Text style={{ textAlign: 'center', fontFamily: 'Poppins_Regular' }}>
-                  {ciphertext}
-                </Text>
-              </View>
-              <Text style={styles.boldText}>Soal Matematis</Text>
+
               <View style={styles.imageContainer}>
-                <Image source={require('../assets/images/notasi3.png')} style={styles.image2} />
+                <Image source={require('../assets/images/plain.png')} style={styles.image4} />
               </View>
               <Text style={styles.textMateri}>
-                Soal matematis dalam kriptografi digunakan untuk menyampaikan konsep dan operasi
-                kriptografi secara lebih formal menggunakan simbol-simbol matematika. Soal ini
-                membantu dalam menggambarkan hubungan antara plaintext, cipherteks, kunci, fungsi
-                enkripsi, dan fungsi dekripsi secara matematis. {'\n'}
-                Misalkan:{'\n'}C merupakan cipherteks,{'\n'}P merupakan plainteks.{'\n'}{' '}
+                Kata kunci : texas
+                {'\n'}
+                Kemudian kata kunci digunakan untuk membentuk :
               </Text>
-              <View style={styles.rumusText}>
-                <Text style={styles.rumus}>E(P) = C</Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/kunci.jpg')} style={styles.image5} />
               </View>
+              <Text style={styles.textMateri}>Sehingga diperoleh chipper :</Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/cipe.png')} style={styles.image4} />
+              </View>
+
               <Text style={styles.textMateri}>
-                {' '}
-                {'\n'}Dalam kriptografi, fungsi enkripsi (E) akan memetakan plainteks (P) menjadi
-                cipherteks (C). Soal matematis untuk fungsi enkripsi adalah:
+                Dalam penggantian huruf di atas, setiap huruf di plainteks digantikan dengan huruf
+                yang sesuai berdasarkan urutan yang ditentukan oleh kata kunci "texas". Misalnya,
+                huruf A pada plainteks digantikan dengan huruf Z dalam cipherteks, huruf B
+                digantikan dengan huruf R, dan seterusnya. Pola penggantian huruf tersebut mengikuti
+                urutan huruf dalam kata kunci "texas". Dalam contoh ini, kata kunci "texas"
+                memberikan aturan penggantian huruf yang unik dan khusus sesuai dengan urutan yang
+                ditentukan oleh kata kunci tersebut.
               </Text>
               <View style={styles.rumusText}>
                 <Text style={styles.rumus}>D(C) = P</Text>
               </View>
-              <Text style={styles.textMateri}>
-                {'\n'}Fungsi dekripsi (D) akan memetakan cipherteks (C) kembali menjadi plainteks
-                (P) asli. Soal matematis untuk fungsi dekripsi adalah:
-                {'\n'}
-                Sifat yang harus dipenuhi oleh fungsi enkripsi dan dekripsi adalah bahwa jika
-                plainteks (P) dienkripsi menjadi cipherteks (C) menggunakan fungsi enkripsi (E),
-                kemudian cipherteks (C) tersebut didekripsi kembali menggunakan fungsi dekripsi (D),
-                maka plainteks asli (P) akan kembali terbentuk. Dengan kata lain:
-                {'\n'}
-              </Text>
               <View style={styles.rumusText}>
                 <Text style={styles.rumus}>D(E(P)) = P</Text>
               </View>
@@ -349,6 +330,16 @@ const styles = StyleSheet.create({
   image3: {
     width: 320,
     height: 50,
+    resizeMode: 'contain',
+  },
+  image4: {
+    width: 320,
+    height: 30,
+    resizeMode: 'contain',
+  },
+  image5: {
+    width: 300,
+    height: 350,
     resizeMode: 'contain',
   },
 });
