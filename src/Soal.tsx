@@ -15,7 +15,7 @@ import {
 
 import ModalMateri from './components/Modal';
 
-const Notasi = (props: any) => {
+const Soal = (props: any) => {
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const [modalMateri, setModalMateri] = useState(false);
   const [plaintext, setPlaintext] = useState('');
@@ -48,7 +48,7 @@ const Notasi = (props: any) => {
             <Icon name="chevron-left" type="feather" color="#FFFFFF" size={24} />
           </TouchableOpacity>
           <Animated.View style={{ opacity: fadeAnim }}>
-            <Text style={styles.title}>Notasi Kriptografi</Text>
+            <Text style={styles.title}>Contoh Soal Kriptografi</Text>
           </Animated.View>
           <TouchableOpacity style={{ padding: 2 }} onPress={() => setModalMateri(true)}>
             <Icon name="menu" type="feather" color="#FFFFFF" size={24} />
@@ -60,58 +60,85 @@ const Notasi = (props: any) => {
             <Animated.View style={[styles.viewText, { opacity: fadeAnim }]}>
               <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
                 <Image
-                  source={require('../assets/images/Notasi.jpg')}
+                  source={require('../assets/images/Soal.png')}
                   style={{ width: 280, height: 195, borderRadius: 20 }}
                 />
               </View>
-              <Text style={styles.textMateri}>
-                Notasi kriptografi adalah representasi simbolik yang digunakan dalam kriptografi
-                untuk menggambarkan berbagai konsep, operasi, dan algoritma yang terkait dengan
-                pengamanan dan penyandian informasi. Notasi ini memungkinkan para ahli kriptografi
-                untuk berkomunikasi dengan jelas dan secara konsisten mengenai konsep-konsep
-                tersebut.
-              </Text>
-              <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>1. Pengirim (sender):</Text> Merupakan pihak yang
-                mengirim pesan melalui sistem kriptografi. Pengirim bisa berupa individu, entitas
-                komputer, atau mesin lainnya.
-              </Text>
-              <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>2. Penerima (receiver):</Text> Merupakan pihak yang
-                menerima pesan yang telah dienkripsi melalui sistem kriptografi. Penerima juga bisa
-                berupa individu, entitas komputer, atau mesin lainnya. Pengirim dan penerima
-                memiliki tujuan yang sama dalam kriptografi, yaitu memastikan bahwa pesan dapat
-                dikirim secara aman dan hanya dapat dibaca oleh pihak yang berwenang. Untuk mencapai
-                hal ini, pengirim ingin pesan dapat dikirim secara aman sehingga pihak lain tidak
-                dapat membaca atau memanipulasi pesan tersebut.
-              </Text>
-              <View style={styles.imageContainer}>
-                <Image source={require('../assets/images/Notasi2.png')} style={styles.image} />
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>Contoh Soal Kriptografi Algoritma Shift Cipher</Text>
               </View>
               <Text style={styles.textMateri}>
-                {'\n'}Contoh penggunaan pengirim dan penerima dalam kriptografi adalah sebagai
-                berikut:
-                {'\n'}
-                <Text style={styles.boldText}>Pengirim:</Text> Alice,
-                <Text style={styles.boldText}> Penerima:</Text> Bob {'\n'}
-                <Text style={styles.boldText}>Pengirim:</Text> Komputer client,
-                <Text style={styles.boldText}> Penerima:</Text> Komputer server
-                {'\n'}
-                <Text style={styles.boldText}>Pengirim:</Text> Alice,
-                <Text style={styles.boldText}> Penerima:</Text> Mesin penjawab
+                Shift cipher, juga dikenal sebagai Caesar cipher, adalah salah satu jenis cipher
+                substitusi sederhana dalam kriptografi. Cipher ini melibatkan pergeseran posisi
+                setiap huruf dalam alfabet ke arah kanan atau ke kiri.
+                {'\n'}Contoh Shift cipher dengan pergeseran 3 posisi ke kanan:{'\n'}• Plainteks:
+                "HELLO" {'\n'}• Key = 3{'\n'}Tentukan ciphertext Proses enkripsi dapat dilakukan
+                menggunakan langkah berikut :{'\n'}1. Buat table berikut:
               </Text>
+              <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
+                <Image source={require('../assets/images/table.png')} style={styles.image} />
+              </View>
               <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>3. Cipherteks (ciphertext):</Text>Merupakan pesan yang
-                telah disandikan atau dienkripsi sehingga tidak lagi memiliki makna yang jelas. Hal
-                ini bertujuan untuk menjaga kerahasiaan pesan tersebut agar hanya dapat dibaca oleh
-                pihak yang berwenang. Cipherteks juga dikenal dengan sebutan kriptogram
-                (cryptogram).
+                2. Sesuaikan huruf pada plaintext dengan table nomor 1{'\n'}
+                3. Cipherteks: "KHOOR"{'\n'}
+                Dalam contoh di atas, setiap huruf dalam plainteks "HELLO" digeser ke kanan sebanyak
+                3 posisi dalam alfabet. Huruf "H" berubah menjadi "K", huruf "E" berubah menjadi
+                "H", dan seterusnya.
               </Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/TABLEHASIL.png')} style={styles.image2} />
+              </View>
               <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>4. Plainteks (plaintext):</Text> Merupakan pesan asli
-                atau teks yang memiliki makna yang jelas sebelum dilakukan penyandian atau enkripsi.
-                Plainteks dapat berupa teks biasa, angka, atau data lainnya yang akan diubah menjadi
-                cipherteks. {'\n'}Contoh: {'\n'}
+                Hasilnya adalah cipherteks "KHOOR". Pada Shift cipher, pergeseran posisi huruf
+                biasanya direpresentasikan dalam bentuk kunci, misalnya kunci "3" untuk pergeseran 3
+                posisi ke kanan. Dalam dekripsi, pergeseran posisi dilakukan ke arah yang berlawanan
+                (ke kiri) dengan menggunakan kunci yang sama untuk mendapatkan kembali plainteks
+                asli. Shift cipher adalah salah satu metode kriptografi yang sederhana dan mudah
+                dipahami. Namun, karena hanya melibatkan pergeseran posisi huruf yang tetap, cipher
+                ini mudah ditembus dengan menggunakan teknik analisis frekuensi dan metode lainnya.
+              </Text>
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>Contoh Soal Kriptografi Algoritma Shift Cipher</Text>
+              </View>
+              <Text style={styles.textMateri}>
+                Mixed monoalphabetic cipher adalah jenis cipher substitusi yang menggunakan beberapa
+                alfabet pengganti untuk mengenkripsi pesan. Pada cipher ini, setiap huruf dalam
+                plainteks dapat digantikan oleh satu atau lebih huruf pengganti dalam alfabet yang
+                berbeda.
+                {'\n'}
+                Contoh {'\n'}Plain text : ABCDEFGHIJKLMNOPQRSTUVWXYZ {'\n'}Cipher text :
+                DKVQFIBJWPESCXHTMYAUOLRGZN {'\n'}Plain text : IF WE WISH TO REPLACE LETTERS {'\n'}
+                Cipher Text : WI RF RWAJ UH FYTSDVF SFUUFYA
+              </Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/abetic.png')} style={styles.image3} />
+              </View>
+              <Text style={styles.textMateri}>
+                Dalam plainteks, terdapat urutan alfabet yang berurutan dari A sampai Z. Setiap
+                huruf dalam plainteks kemudian digantikan oleh huruf pengganti yang sesuai dalam
+                alfabet pengganti. Misalnya, huruf "A" pada plainteks digantikan oleh huruf "D"
+                dalam alfabet pengganti, huruf "B" digantikan oleh huruf "K", huruf "C" digantikan
+                oleh huruf "V", dan seterusnya. Sehingga, apabila plainteksnya adalah
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ", setelah melalui proses enkripsi dengan menggunakan
+                {'\n'}
+                {'\n'}Mixed monoalphabetic cipher dengan alfabet pengganti yang diberikan, maka
+                cipherteksnya menjadi "DKVQFIBJWPESCXHTMYAUOLRGZN". Dalam contoh lain, terdapat
+                sebuah kalimat "IF WE WISH TO REPLACE LETTERS". Setelah dienkripsi dengan
+                menggunakan alfabet pengganti yang sama, menjadi "WI RF RWAJ UH FYTSDVF SFUUFYA"
+                sebagai cipherteks. Dalam proses dekripsi, alfabet pengganti tersebut digunakan
+                untuk mengembalikan cipherteks menjadi plainteks asli dengan menggantikan setiap
+                huruf dalam cipherteks dengan huruf yang sesuai dalam plainteks.
+              </Text>
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>
+                  Contoh Soal Kriptografi Algoritma Substitusi secara spiral
+                </Text>
+              </View>
+              <Text style={styles.textMateri}>
+                Substitusi secara spiral adalah sebuah metode substitusi dalam kriptografi yang
+                menggunakan pola spiral untuk menggantikan huruf-huruf dalam plainteks. Pada metode
+                ini, sebuah kata kunci digunakan untuk membentuk pola spiral yang akan menentukan
+                urutan penggantian huruf.
                 <Text style={styles.boldText}>Plainteks:</Text> culik anak itu jam 11 siang {'\n'}
                 <Text style={styles.boldText}>Cipherteks:</Text> t^$gfUi89rewoFpfdWqL:p[uTcxZ{'\n'}
                 kamu dapat mencoba penerapanan plainteks di bawah ini :
@@ -130,13 +157,13 @@ const Notasi = (props: any) => {
                   {ciphertext}
                 </Text>
               </View>
-              <Text style={styles.boldText}>Notasi Matematis</Text>
+              <Text style={styles.boldText}>Soal Matematis</Text>
               <View style={styles.imageContainer}>
                 <Image source={require('../assets/images/notasi3.png')} style={styles.image2} />
               </View>
               <Text style={styles.textMateri}>
-                Notasi matematis dalam kriptografi digunakan untuk menyampaikan konsep dan operasi
-                kriptografi secara lebih formal menggunakan simbol-simbol matematika. Notasi ini
+                Soal matematis dalam kriptografi digunakan untuk menyampaikan konsep dan operasi
+                kriptografi secara lebih formal menggunakan simbol-simbol matematika. Soal ini
                 membantu dalam menggambarkan hubungan antara plaintext, cipherteks, kunci, fungsi
                 enkripsi, dan fungsi dekripsi secara matematis. {'\n'}
                 Misalkan:{'\n'}C merupakan cipherteks,{'\n'}P merupakan plainteks.{'\n'}{' '}
@@ -147,14 +174,14 @@ const Notasi = (props: any) => {
               <Text style={styles.textMateri}>
                 {' '}
                 {'\n'}Dalam kriptografi, fungsi enkripsi (E) akan memetakan plainteks (P) menjadi
-                cipherteks (C). Notasi matematis untuk fungsi enkripsi adalah:
+                cipherteks (C). Soal matematis untuk fungsi enkripsi adalah:
               </Text>
               <View style={styles.rumusText}>
                 <Text style={styles.rumus}>D(C) = P</Text>
               </View>
               <Text style={styles.textMateri}>
                 {'\n'}Fungsi dekripsi (D) akan memetakan cipherteks (C) kembali menjadi plainteks
-                (P) asli. Notasi matematis untuk fungsi dekripsi adalah:
+                (P) asli. Soal matematis untuk fungsi dekripsi adalah:
                 {'\n'}
                 Sifat yang harus dipenuhi oleh fungsi enkripsi dan dekripsi adalah bahwa jika
                 plainteks (P) dienkripsi menjadi cipherteks (C) menggunakan fungsi enkripsi (E),
@@ -215,21 +242,21 @@ const Notasi = (props: any) => {
   );
 };
 
-export default Notasi;
+export default Soal;
 
 const styles = StyleSheet.create({
   rumus: {
     padding: 10,
     textAlign: 'center',
     backgroundColor: '#37C9EE',
-    width: 200,
+    // width: 00,
     color: 'white',
     fontWeight: 'bold',
     borderRadius: 10,
   },
   rumusText: {
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
     flex: 1,
   },
   textMulai: {
@@ -310,13 +337,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 250,
-    height: 200,
+    width: 350,
+    height: 50,
     resizeMode: 'contain',
   },
   image2: {
-    width: 250,
-    height: 200,
+    width: 380,
+    height: 50,
+    resizeMode: 'contain',
+  },
+  image3: {
+    width: 320,
+    height: 50,
     resizeMode: 'contain',
   },
 });

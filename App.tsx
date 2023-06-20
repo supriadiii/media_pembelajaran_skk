@@ -11,6 +11,7 @@ import Home from './src/Home';
 import Notasi from './src/Notasi';
 import Pengertian from './src/Pengertian';
 import Sejarah from './src/Sejarah';
+import Soal from './src/Soal';
 import ModalMateri from './src/components/Modal';
 
 const Stack = createNativeStackNavigator();
@@ -61,6 +62,7 @@ export default function App() {
           <Stack.Screen name="Fungsi" component={Fungsi} />
           <Stack.Screen name="Notasi" component={Notasi} />
           <Stack.Screen name="Algoritma" component={Algoritma} />
+          <Stack.Screen name="Soal" component={Soal} />
           <Stack.Screen name="ModalMateri" component={ModalMateri} />
         </Stack.Navigator>
       </NavigationContainer>
