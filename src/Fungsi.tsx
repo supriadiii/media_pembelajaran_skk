@@ -30,7 +30,7 @@ const Fungsi = (props: any) => {
         source={require('../assets/images/bg-Pengertian.png')}
         style={styles.imageBackgroundView}>
         <View style={styles.titleBar}>
-          <TouchableOpacity style={{ padding: 2 }} onPress={() => props.navigation.goBack()}>
+          <TouchableOpacity style={{ padding: 2 }} onPress={() => props.navigation.replace('Home')}>
             <Icon name="chevron-left" type="feather" color="#FFFFFF" size={24} />
           </TouchableOpacity>
           <Animated.View style={{ opacity: fadeAnim }}>
