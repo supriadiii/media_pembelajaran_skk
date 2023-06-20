@@ -158,9 +158,8 @@ const MATERI = [
   {
     id: 6,
     title: 'Contoh Soal',
-    description:
-      'Algoritma kriptografi adalah serangkaian langkah atau prosedur matematis yang digunakan untuk melakukan enkripsi (proses mengubah data menjadi bentuk yang tidak terbaca) dan dekripsi (proses mengembalikan data yang telah dienkripsi menjadi bentuk semula) dalam kriptografi.',
-    image: require('../assets/images/materiAlgoritma.png'),
+    description: 'Kumpulan contoh soal dari beberapa algoritma kriptografi yang umum digunakan',
+    image: require('../assets/images/materiSoal.png'),
   },
 ];
 

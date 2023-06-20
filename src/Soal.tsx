@@ -98,7 +98,9 @@ const Soal = (props: any) => {
                 ini mudah ditembus dengan menggunakan teknik analisis frekuensi dan metode lainnya.
               </Text>
               <View style={styles.rumusText}>
-                <Text style={styles.rumus}>Contoh Soal Kriptografi Algoritma Shift Cipher</Text>
+                <Text style={styles.rumus}>
+                  Contoh Soal Kriptografi Algoritma Mixed Monoalphabetic
+                </Text>
               </View>
               <Text style={styles.textMateri}>
                 Mixed monoalphabetic cipher adalah jenis cipher substitusi yang menggunakan beberapa
@@ -167,50 +169,92 @@ const Soal = (props: any) => {
                 memberikan aturan penggantian huruf yang unik dan khusus sesuai dengan urutan yang
                 ditentukan oleh kata kunci tersebut.
               </Text>
+
               <View style={styles.rumusText}>
-                <Text style={styles.rumus}>
-                  Contoh Soal Kriptografi Algoritma Substitusi secara spiral
-                </Text>
+                <Text style={styles.rumus}>Contoh Soal Kriptografi Algoritma Playfair</Text>
               </View>
+
+              <Text style={styles.textMateri}>
+                Algoritma Playfair adalah algoritma yang didasarkan pada penggunaan matrix huruf
+                berbasis 5x5 yang disusun dengan mengunakan kata kunci. {'\n'}
+                Contoh :{'\n'}Kata kunci = MONARCHY.{'\n'}
+                Plaintext = COKLAT{'\n'}
+                Matrix dibentuk dengan memasukkan kata kunci tersebut (tanpa duplikasi) dari kiri ke
+                kanan dan dari atas ke bawah, dan kemudian mengisi sisa elemen matrix yang kosong
+                dengan sisa huruf alphabet secara terurut. Huruf I dan J dihitung sebagai satu
+                elemen matrix. Plaintext dienkripsi dua huruf sekaligus dengan aturan sebagai
+                berikut :
+              </Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/PLAYFAIR.jpeg')} style={styles.image5} />
+              </View>
+              <Text style={styles.textMateri}>
+                1.Huruf dari Plaintext yang terulang dipisahkan dengan huruf lain seperti X, jadi
+                jika plaintextnya ballon maka akan dimasukkan sebagai BA LX LO ON.{'\n'}
+                2.Huruf-huruf dari plaintext yang masuk di dalam satu baris digantikan dengan huruf
+                ke kanan, dengan elemen pertama dari baris secara sirkular diikuti dengan yang
+                terakhir.{'\n'}
+                3.Sebagai contoh, AR dienkripsi menjadi RM Huruf yang berada pada satu kolom
+                digantikan dengan huruf dibawahnya, dengan elemen teratas dari baris secara sirkular
+                diikuti dengan yang terakhir.{'\n'}
+                4.Sebagai contoh, MU dienkripsi sebagai CM. Selain itu, setiap huruf plaintext
+                digantikan dengan huruf yang berada di barisnya sendiri dan di kolomnya diisi oleh
+                huruf palaintext yang lain. Jadi, HS menjadi BP dan EA menjadi IM (atau JM sesuai
+                dengan keinginan).
+              </Text>
+
+              <Text style={styles.textMateri}>
+                Sehingga berdasarkan contoh soal diatas jika COKLAT di enkripsi menggunakan
+                algoritma Playfair dengan kata kunci MONARCHY, maka hasilnya adalah : MHETRS
+              </Text>
               <View style={styles.rumusText}>
-                <Text style={styles.rumus}>D(E(P)) = P</Text>
+                <Text style={styles.rumus}>Contoh Soal Kriptografi Algoritma Vigenere</Text>
               </View>
               <Text style={styles.textMateri}>
-                Sifat ini menunjukkan bahwa proses enkripsi dan dekripsi adalah saling terbalik dan
-                dapat mengembalikan plainteks asli dari cipherteks dengan menggunakan fungsi
-                dekripsi yang sesuai.
+                Vigenere Cipher ditemukan oleh Blaise de Vigenere pada abad ke 16. Untuk menggunakan
+                algoritma ini, diperlukan sebuah bujursangkar vigenere dimana kolom paling kiri
+                bujursangkar menyatakan huruf-huruf kunci, sedangkan baris paling atas menyatakan
+                huruf-huruf plaintext dan setiap baris di dalam bujursangkar menyatakan huruf-huruf
+                ciphertext.{'\n'}
+                Contoh:{'\n'}
+                Plaintext: ATTACKATDAWN{'\n'}
+                Panjang plaintext: 12 huruf{'\n'}
+                Kata kunci: LEMON (5 huruf){'\n'}
+                Kata kunci: LEMONLEMONLE (12 huruf)
               </Text>
+
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/Vigenere.jpg')} style={styles.image5} />
+              </View>
               <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>5. Dekripsi (decryption):</Text> Merupakan proses
-                mengembalikan cipherteks menjadi plainteks asli menggunakan algoritma kriptografi
-                dan kunci dekripsi yang sesuai. Dekripsi dilakukan oleh penerima pesan yang memiliki
-                kunci dekripsi yang benar.
-              </Text>
-              <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>6. Enkripsi (encryption):</Text> Merupakan proses
-                mengubah pesan asli atau plainteks menjadi cipherteks menggunakan algoritma
-                kriptografi dan kunci enkripsi tertentu. Enkripsi dilakukan agar pesan tidak dapat
-                dengan mudah dibaca oleh pihak yang tidak berwenang.
-              </Text>
-              <Text style={styles.textMateri}>
-                <Text style={styles.boldText}>7. Kunci (key):</Text> Kunci digunakan dalam proses
-                enkripsi dan dekripsi untuk mengontrol algoritma kriptografi. Kunci ini bisa berupa
-                deretan angka, karakter, atau kombinasi lainnya yang memiliki panjang dan format
-                tertentu.
+                Huruf pertama dari plaintext adalah A, dienskripsi dengan menggunakan alfabet pada
+                baris L, yang merupakan huruf pertama pada kata kunci. Ini dilakukan dengan melihat
+                huruf yang terdapat pada baris L dan kolom A pada tabel vigenere, yaitu huruf
+                L.Untuk huruf kedua pada plaintext, kita menggunakan huruf kedua pada kata kunci,
+                yaitu pada baris E dan kolom T, yaitu huruf X. Lakukan terus hingga huruf terakhir
+                plaintext sehingga menghasilkan enkripsi sebagai berikut:{'\n'}
+                {'\n'}
+                Ciphertext: LXFOPVEFRNHR{'\n'}
+                {'\n'}
+                Dekripsi dilakukan dengan cara sebaliknya. Misalkan untuk huruf pertama ciphertext,
+                L, kita cari huruf pertama kata kunci pada baris L, dimana huruf pertama kata kunci
+                juga merupakan huruf L. Kemudian kita dapat menemukan pada baris L, huruf L terdapat
+                pada kolom A, yang mengartikan bahwa huruf A merupakan huruf pertama plaintext.
+                Laukan terus hingga jumlah huruf pada kata kunci habis.
               </Text>
             </Animated.View>
           </ScrollView>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <TouchableOpacity
               style={styles.viewMulai}
-              onPress={() => props.navigation.navigate('Fungsi')}>
+              onPress={() => props.navigation.navigate('Algoritma')}>
               <Icon name="arrow-back-circle" type="ionicon" color="#FFFFFF" />
               <Text style={styles.textMulai}>Materi Sebelumnya</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.viewMulai}
-              onPress={() => props.navigation.navigate('Algoritma')}>
-              <Text style={styles.textMulai}>Materi Selanjutnya</Text>
+              onPress={() => props.navigation.navigate('Home')}>
+              <Text style={styles.textMulai}>Menu Utama</Text>
               <Icon name="arrow-forward-circle" type="ionicon" color="#FFFFFF" />
             </TouchableOpacity>
           </View>
