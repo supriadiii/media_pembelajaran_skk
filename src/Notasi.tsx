@@ -1,3 +1,5 @@
+import { Icon } from '@rneui/themed';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,8 +12,7 @@ import {
   TextInput,
   Button,
 } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
-import { Icon } from '@rneui/themed';
+
 import ModalMateri from './components/Modal';
 
 const Notasi = (props: any) => {
@@ -118,16 +119,18 @@ const Notasi = (props: any) => {
                 kamu dapat mencoba penerapanan plainteks di bawah ini :
               </Text>
               <View style={{ borderWidth: 1, padding: 10, borderRadius: 10 }}>
-                <Text>Plaintext:</Text>
+                <Text style={styles.textMateri}>Plaintext:</Text>
                 <TextInput
-                  style={{ textAlign: 'center' }}
+                  style={{ textAlign: 'center', fontFamily: 'Poppins_Regular' }}
                   value={plaintext}
                   onChangeText={(text) => setPlaintext(text)}
                   placeholder="Masukkan teks"
                 />
                 <Button title="Enkripsi" onPress={encryptText} />
-                <Text>Hasil Ciphertext:</Text>
-                <Text style={{ textAlign: 'center' }}>{ciphertext}</Text>
+                <Text style={styles.textMateri}>Hasil Ciphertext:</Text>
+                <Text style={{ textAlign: 'center', fontFamily: 'Poppins_Regular' }}>
+                  {ciphertext}
+                </Text>
               </View>
               <Text style={styles.textMateri}>
                 <Text style={styles.boldText}>5. Dekripsi (decryption):</Text> Merupakan proses
@@ -245,8 +248,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   boldText: {
-    fontFamily: 'Poppins_Bold',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins_SemiBold',
   },
   imageContainer: {
     alignItems: 'center',
@@ -257,8 +259,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 250,
-    height: 330,
+    height: 200,
     resizeMode: 'contain',
   },
-  // Styles lainnya
 });
