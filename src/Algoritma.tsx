@@ -87,29 +87,29 @@ const Algoritma = (props: any) => {
                   memiliki kunci yang sama untuk melakukan enkripsi dan dekripsi. Kunci tersebut
                   harus dijaga kerahasiaannya agar hanya dapat diakses oleh pihak yang berwenang.
                 </Text>
+                {'\n'}
+                {'\n'}
+                <Text style={styles.boldText}>Contoh algoritma simetri :</Text>
+                {'\n'}
+                {'\n'}
+                <FlatList
+                  data={[
+                    { key: 'AES (Advanced Encryption Standard)' },
+                    { key: 'DES (Data Encyption Standard)' },
+                    { key: 'Blowfish' },
+                    { key: 'IDEA' },
+                    { key: 'GOST' },
+                    { key: 'Serpent' },
+                  ]}
+                  renderItem={({ item }) => {
+                    return (
+                      <View style={{ marginBottom: 10 }}>
+                        <Text style={styles.textMateri}>• {item.key}</Text>
+                      </View>
+                    );
+                  }}
+                />
               </Text>
-              <Text style={styles.boldText}>Contoh algoritma simetri :</Text>
-              <FlatList
-                data={[
-                  { key: 'Tokyo' },
-                  { key: 'Delhi' },
-                  { key: 'Shanghai' },
-                  { key: 'Sao Paolo' },
-                  { key: 'Mexico City' },
-                  { key: 'Cairo' },
-                  { key: 'Dhaka' },
-                  { key: 'Mumbai' },
-                  { key: 'Beijing' },
-                  { key: 'Osaka' },
-                ]}
-                renderItem={({ item }) => {
-                  return (
-                    <View style={{ marginBottom: 10 }}>
-                      <Text style={styles.textMateri}>{item.key}</Text>
-                    </View>
-                  );
-                }}
-              />
               <Text style={styles.textMateri}>
                 4. Nirpenyangkalan (non-repudiation): Fungsi nirpenyangkalan digunakan untuk
                 mencegah entitas yang berkomunikasi menyangkal tindakan atau pengiriman pesan yang
