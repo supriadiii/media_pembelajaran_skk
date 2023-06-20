@@ -79,18 +79,10 @@ const Pengertian = (props: any) => {
               </Text>
             </Animated.View>
           </ScrollView>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
             <TouchableOpacity
               style={styles.viewMulai}
-              // onPress={() => props.navigation.navigate('Pengertian')}
-            >
-              <Icon name="arrow-back-circle" type="ionicon" color="#FFFFFF" />
-              <Text style={styles.textMulai}>Materi Sebelumnya</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.viewMulai}
-              // onPress={() => props.navigation.navigate('Pengertian')}
-            >
+              onPress={() => props.navigation.navigate('Sejarah')}>
               <Text style={styles.textMulai}>Materi Selanjutnya</Text>
               <Icon name="arrow-forward-circle" type="ionicon" color="#FFFFFF" />
             </TouchableOpacity>
@@ -99,7 +91,7 @@ const Pengertian = (props: any) => {
         <ModalMateri
           modalMateriVisible={modalMateri}
           setModalMateri={setModalMateri}
-          navigation={props.navigation}
+          props={props}
         />
       </ImageBackground>
     </>
