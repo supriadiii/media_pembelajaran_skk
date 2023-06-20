@@ -85,7 +85,9 @@ export default function Home(props: any) {
                 <TouchableOpacity key={item.id} onPress={() => handleMateriPress(item.id)}>
                   <View style={styles.viewMateri}>
                     <View style={styles.viewImageTitle}>
-                      <View style={styles.viewImageMateri}></View>
+                      <View style={styles.viewImageMateri}>
+                        <Image source={item.image} style={styles.imageMateri} />
+                      </View>
                       <View style={{ flex: 1 }}>
                         <Text style={styles.textTitleMateri}>{item.title}</Text>
                         <Text
@@ -121,34 +123,43 @@ const MATERI = [
     title: 'Pengertian Kriptografi',
     description:
       'Kriptografi adalah ilmu dan seni mengamankan komunikasi dan data melalui teknik enkripsi untuk menjaga kerahasiaan, integritas, otentikasi, dan mencegah penyangkalan.',
+    image: require('../assets/images/materiPengertian.png'),
   },
   {
     id: 2,
     title: 'Sejarah Kriptografi',
     description:
       'Sejarah kriptografi adalah studi tentang penggunaan teknik-teknik enkripsi untuk menjaga kerahasiaan komunikasi. Kriptografi telah ada sejak zaman kuno, di mana pesan rahasia dikirim menggunakan metode sederhana seperti penggantian huruf atau penggeseran karakter. Selama berabad-abad, kriptografi berkembang dengan penemuan teknik-teknik yang lebih kuat, seperti substitusi polialfabetik dan mesin enkripsi seperti mesin Enigma yang digunakan selama Perang Dunia II.',
+    image: require('../assets/images/materiSejarah.png'),
   },
   {
     id: 3,
     title: 'Fungsi Kriptografi',
     description:
       'Fungsi kriptografi adalah untuk melindungi kerahasiaan, integritas, dan otentikasi data serta komunikasi melalui penggunaan teknik enkripsi yang aman.',
+    image: require('../assets/images/materiFungsi.png'),
   },
   {
     id: 4,
     title: 'Notasi Kriptografi',
     description:
       'Notasi kriptografi adalah sistem atau metode yang digunakan untuk merepresentasikan atau menyimbolkan data atau informasi secara kriptografis dalam bentuk simbol, angka, atau karakter khusus.',
+    image: require('../assets/images/materiNotasi.png'),
   },
   {
     id: 5,
     title: 'Algoritma Kriptografi',
     description:
       'Algoritma kriptografi adalah serangkaian langkah atau prosedur matematis yang digunakan untuk melakukan enkripsi (proses mengubah data menjadi bentuk yang tidak terbaca) dan dekripsi (proses mengembalikan data yang telah dienkripsi menjadi bentuk semula) dalam kriptografi.',
+    image: require('../assets/images/materiAlgoritma.png'),
   },
 ];
 
 const styles = StyleSheet.create({
+  imageMateri: {
+    height: '100%',
+    width: '100%',
+  },
   textTitleMateri: {
     color: '#000000',
     fontFamily: 'Poppins_Bold',
@@ -157,7 +168,6 @@ const styles = StyleSheet.create({
   viewImageMateri: {
     height: 60,
     width: 60,
-    backgroundColor: '#FFFFFF',
     borderRadius: 20,
   },
   viewImageTitle: {
