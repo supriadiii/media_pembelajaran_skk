@@ -168,7 +168,9 @@ const Soal = (props: any) => {
                 ditentukan oleh kata kunci tersebut.
               </Text>
               <View style={styles.rumusText}>
-                <Text style={styles.rumus}>D(C) = P</Text>
+                <Text style={styles.rumus}>
+                  Contoh Soal Kriptografi Algoritma Substitusi secara spiral
+                </Text>
               </View>
               <View style={styles.rumusText}>
                 <Text style={styles.rumus}>D(E(P)) = P</Text>
