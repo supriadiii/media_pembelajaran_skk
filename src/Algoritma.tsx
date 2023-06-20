@@ -9,7 +9,6 @@ import {
   Animated,
   ScrollView,
   Image,
-  FlatList,
 } from 'react-native';
 
 import ModalMateri from './components/Modal';
@@ -45,80 +44,138 @@ const Algoritma = (props: any) => {
         <View style={styles.viewContent}>
           <ScrollView>
             <Animated.View style={[styles.viewText, { opacity: fadeAnim }]}>
-              <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
-                <Image
-                  source={require('../assets/images/kriptografySimetris.png')}
-                  style={styles.image2}
-                />
-              </View>
-              <Text style={styles.textMateri}>
-                Algoritma Simetri (Symmetric-key cryptography) adalah salah satu jenis kriptografi
-                yang menggunakan kunci yang sama untuk melakukan enkripsi dan dekripsi. Dalam
-                algoritma ini, kunci enkripsi juga digunakan sebagai kunci dekripsi. Kunci tersebut
-                juga dikenal dengan istilah kunci simetri, kunci privat, atau kunci rahasia (secret
-                key). Algoritma kriptografi dalam kriptografi kunci-simetri disebut algoritma
-                simetri atau algoritma konvensional. Dalam algoritma simetri, proses enkripsi
-                dilakukan dengan menggunakan kunci enkripsi (EK) untuk mengubah plainteks (P)
-                menjadi cipherteks (C), sedangkan proses dekripsi dilakukan dengan menggunakan kunci
-                dekripsi (DK) untuk mengembalikan cipherteks (C) menjadi plainteks (P) asli.
-              </Text>
-              <Text style={styles.boldText}>Notasi Matematis</Text>
-              <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
-                <Image source={require('../assets/images/simetris2.png')} style={styles.image1} />
-              </View>
-              <View style={styles.rumusText}>
-                <Text style={styles.rumus}>Enkripsi: EK(P) = C</Text>
-              </View>
-              <Text style={styles.textMateri}>
-                Enkripsi: {'\n'}Plainteks: P {'\n'}Kunci enkripsi: K {'\n'}Cipherteks: C {'\n'}
-                Fungsi enkripsi: E {'\n'}Proses enkripsi dilakukan dengan mengaplikasikan fungsi
-                enkripsi (E) pada plainteks (P) menggunakan kunci enkripsi (K) sebagai parameter.
-                Hasilnya adalah cipherteks (C).
-              </Text>
-              <View style={styles.rumusText}>
-                <Text style={styles.rumus}>Dekripsi: DK(C) = P</Text>
-              </View>
-              <Text style={styles.textMateri}>
-                Dekripsi: {'\n'}Cipherteks: C {'\n'}Kunci dekripsi: K {'\n'}Plainteks: P {'\n'}
-                Fungsi dekripsi: D {'\n'}Proses dekripsi dilakukan dengan mengaplikasikan fungsi
-                dekripsi (D) pada cipherteks (C) menggunakan kunci dekripsi (K) sebagai parameter.
-                Hasilnya adalah plainteks (P) asli.{'\n'}
+              <Text style={styles.boldText2}>Kriptografi Kunci-Simetri</Text>
+              <View style={{ gap: 14, paddingHorizontal: 10 }}>
+                <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
+                  <Image
+                    source={require('../assets/images/kriptografySimetris.png')}
+                    style={styles.image2}
+                  />
+                </View>
                 <Text style={styles.textMateri}>
-                  Dengan menggunakan algoritma simetri, baik pengirim maupun penerima pesan harus
-                  memiliki kunci yang sama untuk melakukan enkripsi dan dekripsi. Kunci tersebut
-                  harus dijaga kerahasiaannya agar hanya dapat diakses oleh pihak yang berwenang.
+                  Algoritma Simetri (Symmetric-key cryptography) adalah salah satu jenis kriptografi
+                  yang menggunakan kunci yang sama untuk melakukan enkripsi dan dekripsi. Dalam
+                  algoritma ini, kunci enkripsi juga digunakan sebagai kunci dekripsi. Kunci
+                  tersebut juga dikenal dengan istilah kunci simetri, kunci privat, atau kunci
+                  rahasia (secret key). Algoritma kriptografi dalam kriptografi kunci-simetri
+                  disebut algoritma simetri atau algoritma konvensional. Dalam algoritma simetri,
+                  proses enkripsi dilakukan dengan menggunakan kunci enkripsi (EK) untuk mengubah
+                  plainteks (P) menjadi cipherteks (C), sedangkan proses dekripsi dilakukan dengan
+                  menggunakan kunci dekripsi (DK) untuk mengembalikan cipherteks (C) menjadi
+                  plainteks (P) asli.
                 </Text>
-              </Text>
-              <Text style={styles.boldText}>Contoh Algoritma Simetri :</Text>
-              <View>
-                <Text style={styles.textMateri}>Tokyo</Text>
-                <Text style={styles.textMateri}>Delhi</Text>
-                <Text style={styles.textMateri}>Shanghai</Text>
-                <Text style={styles.textMateri}>Sao Paolo</Text>
-                <Text style={styles.textMateri}>Mexico City</Text>
-                <Text style={styles.textMateri}>Cairo</Text>
-                <Text style={styles.textMateri}>Dhaka</Text>
-                <Text style={styles.textMateri}>Mumbai</Text>
-                <Text style={styles.textMateri}>Beijing</Text>
-                <Text style={styles.textMateri}>Osaka</Text>
+                <Text style={styles.boldText}>Notasi Matematis</Text>
+                <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
+                  <Image source={require('../assets/images/simetris2.png')} style={styles.image1} />
+                </View>
+                <View style={styles.rumusText}>
+                  <Text style={styles.rumus}>Enkripsi: EK(P) = C</Text>
+                </View>
+                <Text style={styles.textMateri}>
+                  Enkripsi: {'\n'}Plainteks: P {'\n'}Kunci enkripsi: K {'\n'}Cipherteks: C {'\n'}
+                  Fungsi enkripsi: E {'\n'}Proses enkripsi dilakukan dengan mengaplikasikan fungsi
+                  enkripsi (E) pada plainteks (P) menggunakan kunci enkripsi (K) sebagai parameter.
+                  Hasilnya adalah cipherteks (C).
+                </Text>
+                <View style={styles.rumusText}>
+                  <Text style={styles.rumus}>Dekripsi: DK(C) = P</Text>
+                </View>
+                <Text style={styles.textMateri}>
+                  Dekripsi: {'\n'}Cipherteks: C {'\n'}Kunci dekripsi: K {'\n'}Plainteks: P {'\n'}
+                  Fungsi dekripsi: D {'\n'}Proses dekripsi dilakukan dengan mengaplikasikan fungsi
+                  dekripsi (D) pada cipherteks (C) menggunakan kunci dekripsi (K) sebagai parameter.
+                  Hasilnya adalah plainteks (P) asli.{'\n'}
+                  <Text style={styles.textMateri}>
+                    Dengan menggunakan algoritma simetri, baik pengirim maupun penerima pesan harus
+                    memiliki kunci yang sama untuk melakukan enkripsi dan dekripsi. Kunci tersebut
+                    harus dijaga kerahasiaannya agar hanya dapat diakses oleh pihak yang berwenang.
+                  </Text>
+                </Text>
+                <Text style={styles.boldText}>Contoh Algoritma Simetri :</Text>
+                <View>
+                  <Text style={styles.textMateri}>AES (Advanced Encryption Standard)</Text>
+                  <Text style={styles.textMateri}>DES (Data Encyption Standard)</Text>
+                  <Text style={styles.textMateri}>Blowfish</Text>
+                  <Text style={styles.textMateri}>IDEA</Text>
+                  <Text style={styles.textMateri}>GOST</Text>
+                  <Text style={styles.textMateri}>Serpent</Text>
+                </View>
               </View>
 
-              <Text style={styles.textMateri}>
-                4. Nirpenyangkalan (non-repudiation): Fungsi nirpenyangkalan digunakan untuk
-                mencegah entitas yang berkomunikasi menyangkal tindakan atau pengiriman pesan yang
-                mereka lakukan. Melalui penggunaan tanda tangan digital, kriptografi dapat
-                memberikan bukti yang tidak dapat disangkal tentang keaslian pesan dan keterlibatan
-                pengirim. Dengan demikian, penerima pesan dapat membuktikan bahwa pesan tersebut
-                benar-benar dikirim oleh pengirim yang bersangkutan.
-              </Text>
-              <Text style={styles.textMateri}>
-                Kriptografi digunakan dalam berbagai aspek kehidupan saat ini, mulai dari penggunaan
-                ATM untuk mengambil uang, telepon genggam (HP), komputer di lab atau kantor, hingga
-                layanan internet. Bahkan, kriptografi juga diterapkan di gedung-gedung bisnis dan
-                pangkalan militer untuk melindungi kerahasiaan informasi sensitif. Dalam semua aspek
-                ini, kriptografi berperan penting dalam menjaga keamanan, kerahasiaan, dan keabsahan
-                komunikasi dan data yang kita gunakan sehari-hari.
-              </Text>
+              {/* ============================================================ */}
+              <Text style={styles.boldText2}>Kriptografi Kunci-Nirsimetri</Text>
+              <View style={{ gap: 14, paddingHorizontal: 10 }}>
+                <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
+                  <Image
+                    source={require('../assets/images/nirsimetri1.jpeg')}
+                    style={styles.image2}
+                  />
+                </View>
+                <Text style={styles.textMateri}>
+                  Kriptografi nirsimetris (Asymmetric-key cryptography), juga dikenal sebagai
+                  kriptografi kunci-publik, adalah sistem kriptografi yang menggunakan dua kunci
+                  berbeda untuk enkripsi dan dekripsi. Kunci enkripsi (EK) bersifat publik, dapat
+                  diketahui oleh siapa pun, sedangkan kunci dekripsi (ED) bersifat rahasia. Dengan
+                  menggunakan kriptografi nirsimetris, pesan dapat diamankan dan hanya dapat dibaca
+                  oleh penerima yang memiliki kunci dekripsi yang sesuai. Keamanan dan kerahasiaan
+                  komunikasi dapat dipertahankan dalam lingkungan yang tidak terpercaya. Kriptografi
+                  nirsimetris digunakan dalam aplikasi seperti tanda tangan digital dan pertukaran
+                  kunci aman dalam komunikasi digital.
+                </Text>
+
+                <Text style={styles.textMateri}>
+                  Kriptografi nirsimetris dianalogikan sebagai kotak surat yang terkunci. Pemilik
+                  kotak memiliki kunci dekripsi rahasia, sementara semua orang dapat menggunakan
+                  kunci enkripsi publik untuk mengirim pesan. Hanya pemilik kunci dekripsi yang
+                  dapat membuka dan membaca pesan yang telah dienkripsi. Analogi ini mencerminkan
+                  konsep kriptografi nirsimetris di mana pesan dapat diamankan dengan kunci publik
+                  dan hanya dapat dibaca oleh penerima yang memiliki kunci dekripsi yang sesuai.
+                </Text>
+
+                <Text style={styles.boldText}>Notasi Matematis</Text>
+                {/* <View style={{ justifyContent: 'center', flexDirection: 'row', paddingBottom: 20 }}>
+                  <Image source={require('../assets/images/simetris2.png')} style={styles.image1} />
+                </View> */}
+                <View style={styles.rumusText}>
+                  <Text style={styles.rumus}>Enkripsi: EK1(P) = C</Text>
+                </View>
+
+                <Text style={styles.textMateri}>
+                  Enkripsi: {'\n'}Fungsi enkripsi: E {'\n'}Kunci enkripsi pertama: K1{'\n'}
+                  Plainteks: P {'\n'}
+                  Cipherteks: C {'\n'}
+                  {'\n'}
+                  Proses enkripsi dilakukan dengan mengaplikasikan fungsi enkripsi (E) pada
+                  plainteks (P) menggunakan kunci enkripsi pertama(K1) sebagai parameter. Hasilnya
+                  adalah cipherteks (C).
+                </Text>
+
+                <View style={styles.rumusText}>
+                  <Text style={styles.rumus}>Dekripsi: DK2(C) = P</Text>
+                </View>
+                <Text style={styles.textMateri}>
+                  Dekripsi: {'\n'}Fungsi dekripsi: D {'\n'}Kunci dekripsi kedua: K2{'\n'}
+                  Cipherteks: C {'\n'}Plainteks: P {'\n'}
+                  Proses dekripsi dilakukan dengan mengaplikasikan fungsi dekripsi (D) pada
+                  cipherteks (C) menggunakan kunci dekripsi kedua (K2) sebagai parameter. Hasilnya
+                  adalah plainteks (P) asli.{'\n'}
+                  {'\n'}
+                  <Text style={styles.textMateri}>
+                    Dengan menggunakan algoritma simetri, baik pengirim maupun penerima pesan harus
+                    memiliki kunci yang sama untuk melakukan enkripsi dan dekripsi. Kunci tersebut
+                    harus dijaga kerahasiaannya agar hanya dapat diakses oleh pihak yang berwenang.
+                  </Text>
+                </Text>
+                <Text style={styles.boldText}>Contoh Algoritma Simetri :</Text>
+                <View>
+                  <Text style={styles.textMateri}>ECC (Ellyptic Curve Cryptography)</Text>
+                  <Text style={styles.textMateri}>RSA</Text>
+                  <Text style={styles.textMateri}>ElGamal</Text>
+                  <Text style={styles.textMateri}>Rabin</Text>
+                  <Text style={styles.textMateri}>Diffie-Hellman Key Exchange</Text>
+                  <Text style={styles.textMateri}>DSA</Text>
+                </View>
+              </View>
             </Animated.View>
           </ScrollView>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -165,17 +222,21 @@ const styles = StyleSheet.create({
   },
   boldText: {
     fontFamily: 'Poppins_SemiBold',
-    fontSize: 16,
+    fontSize: 14,
+  },
+  boldText2: {
+    fontFamily: 'Poppins_Bold',
+    fontSize: 18,
   },
   image1: {
     resizeMode: 'contain',
-    width: 400,
+    width: 300,
     height: 200,
   },
   image2: {
     resizeMode: 'contain',
-    width: 350,
-    height: 150,
+    width: 300,
+    height: 100,
   },
   textMulai: {
     color: '#FFFFFF',
