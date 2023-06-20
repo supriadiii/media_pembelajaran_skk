@@ -85,11 +85,9 @@ const Notasi = (props: any) => {
                 hal ini, pengirim ingin pesan dapat dikirim secara aman sehingga pihak lain tidak
                 dapat membaca atau memanipulasi pesan tersebut.
               </Text>
-
               <View style={styles.imageContainer}>
                 <Image source={require('../assets/images/Notasi2.png')} style={styles.image} />
               </View>
-
               <Text style={styles.textMateri}>
                 {'\n'}Contoh penggunaan pengirim dan penerima dalam kriptografi adalah sebagai
                 berikut:
@@ -132,6 +130,46 @@ const Notasi = (props: any) => {
                   {ciphertext}
                 </Text>
               </View>
+              <Text style={styles.boldText}>Notasi Matematis</Text>
+              <View style={styles.imageContainer}>
+                <Image source={require('../assets/images/notasi3.png')} style={styles.image2} />
+              </View>
+              <Text style={styles.textMateri}>
+                Notasi matematis dalam kriptografi digunakan untuk menyampaikan konsep dan operasi
+                kriptografi secara lebih formal menggunakan simbol-simbol matematika. Notasi ini
+                membantu dalam menggambarkan hubungan antara plaintext, cipherteks, kunci, fungsi
+                enkripsi, dan fungsi dekripsi secara matematis. {'\n'}
+                Misalkan:{'\n'}C merupakan cipherteks,{'\n'}P merupakan plainteks.{'\n'}{' '}
+              </Text>
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>E(P) = C</Text>
+              </View>
+              <Text style={styles.textMateri}>
+                {' '}
+                {'\n'}Dalam kriptografi, fungsi enkripsi (E) akan memetakan plainteks (P) menjadi
+                cipherteks (C). Notasi matematis untuk fungsi enkripsi adalah:
+              </Text>
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>D(C) = P</Text>
+              </View>
+              <Text style={styles.textMateri}>
+                {'\n'}Fungsi dekripsi (D) akan memetakan cipherteks (C) kembali menjadi plainteks
+                (P) asli. Notasi matematis untuk fungsi dekripsi adalah:
+                {'\n'}
+                Sifat yang harus dipenuhi oleh fungsi enkripsi dan dekripsi adalah bahwa jika
+                plainteks (P) dienkripsi menjadi cipherteks (C) menggunakan fungsi enkripsi (E),
+                kemudian cipherteks (C) tersebut didekripsi kembali menggunakan fungsi dekripsi (D),
+                maka plainteks asli (P) akan kembali terbentuk. Dengan kata lain:
+                {'\n'}
+              </Text>
+              <View style={styles.rumusText}>
+                <Text style={styles.rumus}>D(E(P)) = P</Text>
+              </View>
+              <Text style={styles.textMateri}>
+                Sifat ini menunjukkan bahwa proses enkripsi dan dekripsi adalah saling terbalik dan
+                dapat mengembalikan plainteks asli dari cipherteks dengan menggunakan fungsi
+                dekripsi yang sesuai.
+              </Text>
               <Text style={styles.textMateri}>
                 <Text style={styles.boldText}>5. Dekripsi (decryption):</Text> Merupakan proses
                 mengembalikan cipherteks menjadi plainteks asli menggunakan algoritma kriptografi
@@ -180,6 +218,20 @@ const Notasi = (props: any) => {
 export default Notasi;
 
 const styles = StyleSheet.create({
+  rumus: {
+    padding: 10,
+    textAlign: 'center',
+    backgroundColor: '#37C9EE',
+    width: 200,
+    color: 'white',
+    fontWeight: 'bold',
+    borderRadius: 10,
+  },
+  rumusText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
   textMulai: {
     color: '#FFFFFF',
     fontFamily: 'Poppins_SemiBold',
